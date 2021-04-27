@@ -1,0 +1,16 @@
+{% extends 'todoapp/base.html' %}
+{% block content %}
+
+<div class="header">
+    <a href="{% url 'display' %}">Go back</a>
+</div>
+
+<div style="padding-left: 20px;">
+    <h2>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <p>Due Date: {{item.due_date}}</p>
+
+</div>
+
+
+{% endblock content %}

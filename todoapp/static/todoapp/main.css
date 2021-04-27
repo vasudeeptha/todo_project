@@ -1,0 +1,65 @@
+/* No CSS */
+/*# sourceMappingURL=main.css.map */
+.styleimg {
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px; }
+
+.buttonstyle {
+  padding-bottom: 20px; }
+
+.fa-color {
+  color: dodgerblue; }
+
+button {
+  background-color: dodgerblue;
+  color: floralwhite;
+  border-color: dodgerblue; }
+
+.textstyle {
+  font-size: 14px; }
+
+.footer {
+  padding-bottom: 25px; }
+
+.carousel-item .img-fluid {
+  width: 100%;
+  height: 100%; }
+
+.navbar-brand > img {
+  max-height: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain; }
+
+.carousel-caption {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  Text-align: left; }
+
+@media only screen and (max-width: 400px) {
+  .carousel-caption {
+    padding-left: 100px;
+    width: 70%;
+    top: 13% !important;
+    transform: translateY(-50%); }
+  .carousel-caption h3 {
+    text-align: left;
+    font-size: 4vw;
+    padding-left: 35px;
+    margin-bottom: 0; }
+  .carousel-caption p {
+    font-size: 3vw;
+    padding-left: 20px; }
+  .navstyle {
+    padding-top: 5%; }
+  .navdiv {
+    padding-bottom: 25%; } }
+
+@media only screen and (min-width: 400px) {
+  .zoom:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1); } }

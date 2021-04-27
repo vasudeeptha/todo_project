@@ -1,0 +1,84 @@
+{% extends 'todoapp/base.html' %}
+{% block content %}
+
+
+
+
+<div class="header">
+    <div>
+        <h2>Hello {{request.user}}</h2>
+    </div>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    
+</div>
+
+
+
+<div id="search-add-wrapper">
+    <form method="GET" style="margin-top: 20px; display:flex;">
+    
+        <input type='text' name ='search-area' value ="{{get_input}}">
+        <input class="button" type="submit" value="Search">
+    </form> 
+    <a id ="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+</div>
+
+
+<div class="task-items-wrapper">
+    {% for task in task_list %}
+     <div class="task-wrapper">
+         {% if task.complete %}
+         <div class="task-title">
+            <div class="task-complete-icon"></div>
+             <i><s><a href="{% url 'task' task.id %}">
+                 {{task}}
+                 <br>
+                 <i class="fa fa-calendar calender-icon"><small style="padding-left: 5px;">{{task.created}}</small></i>
+             </a></s></i>
+             
+         </div>
+         <div>
+            <div style="display: inline-block;padding-right: 10px;">
+                <span class="word success">{{task.category}}</span>
+            </div>
+            
+            
+            <a class="delete-link" href="{% url 'update' task.id %}"><i class="fa fa-edit"></i></a>
+            <a class="delete-link" href="{% url 'delete' task.id %}"><i class="fa fa-trash-o"></i></a>
+
+         </div>
+         
+        {% else %}
+           <div class="task-title">
+                <div class="task-incomplete-icon"></div>
+                <a href="{% url 'task' task.id %}">
+                    {{task}}
+                    <br>
+                    <i class="fa fa-calendar calender-icon"><small style="padding-left: 5px;">{{task.created}}</small></i>
+                </a>
+          </div>
+          <div>
+              <div style="display: inline-block;padding-right: 10px;">
+                <span class="word success">{{task.category}}</span>
+              </div>
+            
+            <a class="delete-link" href="{% url 'update' task.id %}"><i class="fa fa-edit"></i></a>
+            <a class="delete-link" href="{% url 'delete' task.id %}"><i class="fa fa-trash-o"></i></a>
+            
+          </div>
+        {% endif %}
+     </div>
+     {% empty %}
+    <h3> No items in the list</h3>
+
+    {% endfor %}
+
+</div>
+
+
+{% endblock content %}
+

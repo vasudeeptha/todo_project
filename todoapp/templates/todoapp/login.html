@@ -1,0 +1,31 @@
+{% extends 'todoapp/base.html' %}
+{% block content %}
+
+<div class="header">
+   <h3>Login</h3>
+</div>
+
+
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+    
+        <lable>Username</lable>
+        <input type="text" name="uname">
+        <br>
+        <br>
+        <lable>Password</lable>
+        <input type="password" name="psw">
+        <br>
+        <br>
+        <center><input class="button" type="submit" value="Login"></center>
+    </form>
+    {% for message in messages %}
+   <center><p style="color: #117e76;">"{{message}}"</p></center>
+    {% endfor %}
+    <p>Don't have an account ? <a style="color: #117e76;text-decoration: none;" href="{% url 'register' %}">Register</a></p>
+</div>
+
+
+{% endblock content %}
